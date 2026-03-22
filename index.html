@@ -30,13 +30,16 @@
     }
 
     img {
-      width: 150px;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
       border-radius: 50%;
+      border: 4px solid #1e293b;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 42px;
       margin: 10px 0;
       color: #1e293b;
     }
@@ -44,6 +47,7 @@
     p {
       max-width: 400px;
       color: #444;
+      line-height: 1.6;
     }
 
     .buttons {
@@ -59,10 +63,12 @@
       color: white;
       border-radius: 25px;
       text-decoration: none;
+      transition: 0.2s;
     }
 
     .btn:hover {
       background: #334155;
+      transform: translateY(-2px);
     }
 
     .icons {
@@ -81,14 +87,18 @@
 <body>
 
 <div class="left">
-  <img src="https://via.placeholder.com/150" alt="profile">
+  <img src="IMG_0051.png" alt="profile">
 
   <h1>Malachi Horsangchai</h1>
 
   <p>
-    Hi, I'm Malachi, a student at the University of Rochester studying
-    Statistics, Political Science, and History.
-    I’m interested in analyzing politics through data.
+    Hi, I'm Malachi — a student at the University of Rochester studying
+    Statistics, Political Science, and History. I was born in California
+    and raised in Hong Kong.
+  </p>
+
+  <p>
+    I’m passionate about analyzing politics and history through the lens of data.
   </p>
 
   <div class="buttons">
@@ -98,8 +108,8 @@
   </div>
 
   <div class="icons">
+    <a href="https://github.com/yourusername">GitHub</a>
     <a href="#">LinkedIn</a>
-    <a href="#">GitHub</a>
   </div>
 </div>
 
