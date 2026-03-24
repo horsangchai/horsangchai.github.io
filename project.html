@@ -6,38 +6,101 @@
 <title>Projects</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: #f8fafc;
+  color: #0f172a;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
 }
 
 .project {
   background: white;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 16px;
   margin-bottom: 20px;
+  transition: 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.project h3 {
+  margin-top: 0;
+}
+
+.project p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  font-weight: 600;
+}
+
+.back:hover {
+  background: #f1f5f9;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Projects</h1>
+<div class="container">
 
-<div class="project">
-  <h3>Quantitative Analysis of Electoral Systems</h3>
-  <p>Statistical analysis comparing electoral systems.</p>
+  <h1>Projects</h1>
+
+  <div class="project">
+    <h3>Captivity, Extraction, and Abolition</h3>
+    <p>
+      A data-driven microhistory of Isan / Lao unfreedom in Siam (c. 1850–1905).
+      Built from primary sources and transformed into a structured dataset to analyze
+      patterns of captivity, labor, and extraction.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>Quantitative Analysis of Electoral Systems</h3>
+    <p>
+      Statistical comparison of proportional and majoritarian systems,
+      focusing on representation distortion and long-term political stability.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>Historical Data Study: Political Transitions</h3>
+    <p>
+      Time-series analysis of regime change across regions,
+      combining historical research with regression modeling.
+    </p>
+  </div>
+
+  <a href="index.html" class="back">← Back to Home</a>
+
 </div>
-
-<div class="project">
-  <h3>Political Transitions Study</h3>
-  <p>Time-series analysis of regime change.</p>
-</div>
-
-<br>
-<a href="index.html">← Back to Home</a>
 
 </body>
 </html>
