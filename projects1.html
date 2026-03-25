@@ -1,123 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slavery in Late-19th-Century Siam — Malachi Horsangchai</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
-}
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 72px 24px 80px;
+    }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
 
-.description {
-  color: #475569;
-  line-height: 1.6;
-  margin-bottom: 40px;
-}
+    h1 {
+      font-size: 46px;
+      line-height: 1.05;
+      margin: 0 0 16px 0;
+      max-width: 850px;
+    }
 
-.section {
-  margin-bottom: 40px;
-}
+    .subtitle {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #334155;
+      max-width: 820px;
+      margin-bottom: 30px;
+    }
 
-.section h2 {
-  margin-bottom: 12px;
-}
+    .hero-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      margin-bottom: 28px;
+    }
 
-.file-list a {
-  display: inline-block;
-  margin: 6px 10px 6px 0;
-  padding: 8px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 1px solid #cbd5e1;
-  font-size: 14px;
-  font-weight: 500;
-  color: #0f172a;
-}
+    .hero-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.8;
+      font-size: 16px;
+    }
 
-.file-list a:hover {
-  background: #f1f5f9;
-}
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0 36px;
+    }
 
-iframe {
-  width: 100%;
-  height: 600px;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-}
+    .meta-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 18px;
+    }
 
-.back {
-  display: inline-block;
-  margin-top: 50px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  border: 1px solid #cbd5e1;
-  font-weight: 600;
-}
+    .meta-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-.back:hover {
-  background: #f1f5f9;
-}
-</style>
+    .meta-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .meta-note {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-bottom: 28px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 25px;
+    }
+
+    .section p,
+    .section li {
+      color: #475569;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .file-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+      background: white;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: #0f172a;
+      color: white;
+      border-color: #0f172a;
+    }
+
+    .btn.primary:hover {
+      background: #1e293b;
+    }
+
+    .back-row {
+      margin-top: 36px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .meta-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 56px 18px 72px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <main class="container">
+    <div class="eyebrow">Project 01 · History · Data Science · Political Economy</div>
 
-  <!-- TITLE -->
-  <h1>Project Title</h1>
+    <h1>Slavery in Late-19th-Century Siam</h1>
 
-  <!-- DESCRIPTION -->
-  <p class="description">
-    Write your project description here. Explain what the project is,
-    what methods you used, and what it shows.
-  </p>
+    <p class="subtitle">
+      A portfolio-level data science reconstruction, 1850–1905, with a focus on Lao / Isan exploitation.
+    </p>
 
-  <!-- FILE LINKS -->
-  <div class="section">
-    <h2>Files</h2>
-    <div class="file-list">
-      <a href="files/project/file.pdf" target="_blank">PDF</a>
-      <a href="files/project/file.docx" target="_blank">DOCX</a>
-      <a href="files/project/file.ipynb" target="_blank">Notebook</a>
-      <a href="files/project/file.md" target="_blank">Markdown</a>
-      <a href="files/project/file.py" target="_blank">Python</a>
-      <a href="files/project/file.csv" target="_blank">CSV</a>
-      <a href="files/project/file.txt" target="_blank">Text</a>
+    <div class="hero-card">
+      <p>
+        This project reconstructs slavery in Siam as a measurable system of labor extraction, debt,
+        war captivity, and ethnic classification rather than as a purely legal institution.
+        Using a manually coded dataset built from 10 historical sources and 252 observation rows,
+        the analysis estimates plausible slave-stock ranges, Lao captive totals, debt-redemption burdens,
+        census omission shares, and the relationship between abolition, administrative reform, and Bangkok-centered state formation.
+      </p>
     </div>
-  </div>
 
-  <!-- PDF PREVIEW (optional but recommended) -->
-  <div class="section">
-    <h2>Preview</h2>
-    <iframe src="files/project/file.pdf"></iframe>
-  </div>
+    <div class="meta-grid">
+      <div class="meta-box">
+        <div class="meta-label">Sources coded</div>
+        <div class="meta-value">10</div>
+        <div class="meta-note">6 primary sources and 4 secondary works used for reconstruction.</div>
+      </div>
 
-  <!-- BACK BUTTON -->
-  <a href="projects.html" class="back">← Back to Projects</a>
+      <div class="meta-box">
+        <div class="meta-label">Observations</div>
+        <div class="meta-value">252</div>
+        <div class="meta-note">Manually coded historical observations in the core dataset.</div>
+      </div>
 
-</div>
+      <div class="meta-box">
+        <div class="meta-label">Analytical tables</div>
+        <div class="meta-value">13</div>
+        <div class="meta-note">Derived CSV tables for scale, debt, census, networks, and abolition.</div>
+      </div>
+
+      <div class="meta-box">
+        <div class="meta-label">Figures</div>
+        <div class="meta-value">10</div>
+        <div class="meta-note">Generated visualizations including a Lao captive-labor network graph.</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>Overview</h2>
+      <p>
+        The central finding is that Lao / Isan people were not peripheral to Siamese slavery.
+        They were structurally important to crown labor, Bangkok construction, specialized urban production,
+        and the transition from slavery to bureaucratically managed labor.
+      </p>
+      <p>
+        Rather than treating slavery as a narrow legal category, the project analyzes it as a layered labor regime
+        that combined debt bondage, hereditary status, war-captive incorporation, corvée substitution,
+        and administrative classification.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Selected Findings</h2>
+      <ul>
+        <li>Plausible mid-century slave-stock estimates range from roughly 1.12 million to 2.10 million.</li>
+        <li>Lao accounted for 43.5% of Bowring’s listed royal war-captive fighting men.</li>
+        <li>A central dependent-inclusive Lao captive estimate reaches roughly 80,000.</li>
+        <li>The detailed 1904 census covered only 49.5% of the kingdom.</li>
+        <li>Udon and Isan alone accounted for 22.3% of the national population while being omitted from the detailed frame.</li>
+        <li>A 100-tical debt under the 1905 abolition law still implied about 25 months to freedom.</li>
+        <li>The Ministry of Local Government budget grew by roughly 51 times from 1894–95 to 1903–04.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Methods</h2>
+      <p>
+        The project is built around a long-form historical observation table rather than a single aggregate spreadsheet.
+        Each row records one coded observation: a population count, price, wage, budget entry, legal rule,
+        bounded claim, or coded qualitative fact. This makes it possible to combine diplomatic accounts,
+        census materials, legal texts, and later scholarship without flattening the differences between them.
+      </p>
+      <p>
+        A key distinction in the analysis is between direct source values and inferred values.
+        Reported figures are kept separate from transparent reconstructions, such as dependent-inclusive captive estimates
+        derived from population benchmarks.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Project Files</h2>
+      <p>
+        Update these links once you upload the final assets for this project.
+      </p>
+
+      <div class="file-list">
+        <a href="siam_slavery_report.docx" class="btn primary" target="_blank">Report (.docx)</a>
+        <a href="#" class="btn" target="_blank">PDF</a>
+        <a href="#" class="btn" target="_blank">Notebook</a>
+        <a href="#" class="btn" target="_blank">Dataset (.csv)</a>
+        <a href="#" class="btn" target="_blank">Python (.py)</a>
+        <a href="#" class="btn" target="_blank">Markdown (.md)</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why this project matters</h2>
+      <p>
+        For portfolio purposes, the contribution is both substantive and methodological.
+        Substantively, it argues that slavery in Siam was a large, multiform system of labor dependence
+        that helped sustain a Bangkok-centered political order. Methodologically, it shows how fragmentary,
+        elite-authored, and politically structured historical evidence can be transformed into a linked dataset,
+        analyzed statistically, and presented as a rigorous economic-history argument.
+      </p>
+    </section>
+
+    <div class="back-row">
+      <a href="projects.html" class="btn">← Back to Projects</a>
+      <a href="index.html" class="btn">Home</a>
+    </div>
+  </main>
 
 </body>
 </html>
