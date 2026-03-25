@@ -1,0 +1,5 @@
+scenario,population_estimate,slave_share_assumed,estimated_slave_population,basis
+Conservative lower bound,4500000,0.25,1125000.0,Bowring lower population bound x quarter-slave benchmark
+Pallegoix quarter benchmark,6000000,0.25,1500000.0,Pallegoix population cited by Bowring x quarter-slave benchmark
+Bowring high-slavery central,5000000,0.35,1750000.0,Bowring upper population bound x 'more than a third' centralization
+Upper plausible bound,6000000,0.35,2100000.0,Pallegoix population x Bowring 'more than a third' lower-bound logic

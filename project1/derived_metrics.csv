@@ -1,0 +1,15 @@
+metric_id,metric,value,unit,interpretation,formula_or_basis
+midcentury_slave_stock_lower,Estimated enslaved population lower bound,1125000.0,persons,Conservative lower-bound scenario for mid-century slave stock,4.5m population x 25% slave share
+midcentury_slave_stock_upper,Estimated enslaved population upper bound,2100000.0,persons,Upper plausible scenario for mid-century slave stock,6.0m population x 35% slave share
+lao_share_royal_war_captives,Lao share of listed royal war captives,0.43478260869565216,share,Lao were the single largest group among Bowring's listed royal captive fighting men,"20,000 / 46,000"
+estimated_royal_lao_captives_central,Estimated Lao captive population with dependents (central),80000.0,persons,Central multiplier using adult males as one quarter of total population,"20,000 x 4"
+census_detailed_coverage_share,Share of 1904 national population in detailed census,0.4947073702609571,share,Only about half the kingdom was covered by detailed 1904 enumeration,"3,308,032 / 6,686,846"
+udon_isan_share_of_national_total,Share of national population in Udon and Isan,0.2232288585680005,share,Omitted Lao-heartland population share,"(576,947 + 915,750) / 6,686,846"
+udon_isan_phayap_share_of_national_total,"Share of national population in Udon, Isan, and Phayap",0.2958435112757195,share,"If northern Lao-related Phayap is included, omitted share rises further","(576,947 + 915,750 + 485,563) / 6,686,846"
+local_gov_budget_growth_factor,Growth factor of Ministry of Local Government budget,50.970873786407765,x,Scale-up of central administrative capacity,10.5m / 206k
+bangkok_police_sanitation_share_revenue,Bangkok police + sanitation as share of 1903-04 revenue,0.04971594202898551,share,Visible Bangkok-centered spending share,"(1,143,000 + 1,121,064) / 45,540,000"
+export_growth_1897_1902,Export growth 1897 to 1902,0.5150321394814528,share,Trade expansion during late reform era,"(87,401,889 - 57,689,792) / 57,689,792"
+import_growth_1897_1902,Import growth 1897 to 1902,0.5966511495274142,share,Import expansion during late reform era,"(65,420,231 - 40,973,403) / 40,973,403"
+months_to_freedom_100_tical_debt,Months to freedom for 100-tical debt under 1905 law,25.0,months,Illustrative redemption horizon,100 / 4
+months_to_freedom_400_tical_debt,Months to freedom for 400-tical debt under 1905 law,100.0,months,Inflated debt paper could still trap labor for years even under abolition law,400 / 4
+corvee_escape_cost_vs_slave_tax_ratio,Monthly corvée escape cost vs annual slave tax ratio,14.4,ratio,Shows structural incentive to choose dependency over direct corvée status,72 / 5
