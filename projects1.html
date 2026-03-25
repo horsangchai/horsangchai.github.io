@@ -18,7 +18,7 @@
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 72px 24px 80px;
     }
@@ -47,20 +47,30 @@
       margin-bottom: 30px;
     }
 
-    .hero-card {
+    .hero-card,
+    .section,
+    .viewer-shell {
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: 24px;
       padding: 28px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
       margin-bottom: 28px;
     }
 
-    .hero-card p {
+    .hero-card p,
+    .section p,
+    .section li {
       margin: 0;
       color: #475569;
       line-height: 1.8;
       font-size: 16px;
+    }
+
+    .section h2,
+    .viewer-shell h2 {
+      margin: 0 0 14px 0;
+      font-size: 25px;
     }
 
     .meta-grid {
@@ -100,33 +110,6 @@
       line-height: 1.5;
     }
 
-    .section {
-      margin-bottom: 28px;
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    }
-
-    .section h2 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 25px;
-    }
-
-    .section p,
-    .section li {
-      color: #475569;
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    .section ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
     .file-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -153,6 +136,7 @@
       gap: 10px;
     }
 
+    button.file-btn,
     .btn {
       display: inline-block;
       padding: 11px 18px;
@@ -163,29 +147,107 @@
       color: #0f172a;
       background: white;
       transition: 0.2s ease;
+      cursor: pointer;
+      font: inherit;
     }
 
+    button.file-btn:hover,
     .btn:hover {
       background: #f1f5f9;
       transform: translateY(-2px);
     }
 
-    .btn.primary {
+    .btn.primary,
+    button.file-btn.primary {
       background: #0f172a;
       color: white;
       border-color: #0f172a;
     }
 
-    .btn.primary:hover {
+    .btn.primary:hover,
+    button.file-btn.primary:hover {
       background: #1e293b;
     }
 
-    .pdf-preview {
+    .viewer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .viewer-name {
+      font-size: 14px;
+      color: #64748b;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .viewer-frame {
       width: 100%;
-      height: 700px;
+      min-height: 720px;
       border: 1px solid #e2e8f0;
       border-radius: 18px;
-      background: white;
+      background: #fff;
+    }
+
+    iframe.viewer-frame {
+      display: none;
+    }
+
+    .text-viewer {
+      display: none;
+      min-height: 520px;
+      max-height: 720px;
+      overflow: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      background: #fff;
+      padding: 20px;
+      white-space: pre-wrap;
+      line-height: 1.7;
+      color: #334155;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+    }
+
+    .table-viewer {
+      display: none;
+      min-height: 300px;
+      max-height: 720px;
+      overflow: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    table.csv-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .csv-table th,
+    .csv-table td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .csv-table th {
+      position: sticky;
+      top: 0;
+      background: #f8fafc;
+      color: #0f172a;
+      z-index: 1;
+    }
+
+    .viewer-message {
+      color: #64748b;
+      line-height: 1.7;
     }
 
     .back-row {
@@ -212,8 +274,10 @@
         font-size: 17px;
       }
 
-      .pdf-preview {
-        height: 520px;
+      .viewer-frame,
+      .text-viewer,
+      .table-viewer {
+        min-height: 500px;
       }
     }
 
@@ -230,8 +294,10 @@
         font-size: 31px;
       }
 
-      .pdf-preview {
-        height: 420px;
+      .viewer-frame,
+      .text-viewer,
+      .table-viewer {
+        min-height: 420px;
       }
     }
   </style>
@@ -283,70 +349,65 @@
     </div>
 
     <section class="section">
-      <h2>Overview</h2>
-      <p>
-        This project uses structured historical data to study slavery in Siam as a system of labor extraction,
-        regional inequality, and state formation. The project includes a full written report, reproducible analysis code,
-        methodological notes, and project datasets.
-      </p>
-    </section>
-
-    <section class="section">
       <h2>Project Files</h2>
       <p>
-        All files for this project are organized below by type.
+        Click any file below to load it in the viewer.
       </p>
 
       <div class="file-grid">
         <div class="file-group">
           <h3>Report</h3>
           <div class="file-list">
-            <a href="project1/siam_slavery_report.docx" class="btn primary" target="_blank">DOCX Report</a>
-            <a href="project1/siam_slavery_report.pdf" class="btn primary" target="_blank">PDF Report</a>
+            <button class="file-btn primary" onclick="showPDF('project1/siam_slavery_report.pdf', 'siam_slavery_report.pdf')">PDF Report</button>
+            <button class="file-btn" onclick="showDOCX('project1/siam_slavery_report.docx', 'siam_slavery_report.docx')">DOCX Report</button>
           </div>
         </div>
 
         <div class="file-group">
           <h3>Analysis</h3>
           <div class="file-list">
-            <a href="project1/siam_slavery_analysis.html" class="btn primary" target="_blank">Notebook HTML</a>
+            <button class="file-btn primary" onclick="showFrame('project1/siam_slavery_analysis.html', 'siam_slavery_analysis.html')">Notebook HTML</button>
             <a href="project1/siam_slavery_analysis.ipynb" class="btn" target="_blank">Notebook (.ipynb)</a>
-            <a href="project1/run_analysis.py" class="btn" target="_blank">Python Script</a>
-            <a href="project1/requirements.txt" class="btn" target="_blank">Requirements</a>
+            <button class="file-btn" onclick="showTextFile('project1/run_analysis.py', 'run_analysis.py')">Python Script</button>
+            <button class="file-btn" onclick="showTextFile('project1/requirements.txt', 'requirements.txt')">Requirements</button>
           </div>
         </div>
 
         <div class="file-group">
           <h3>Documentation</h3>
           <div class="file-list">
-            <a href="project1/README.md" class="btn" target="_blank">README</a>
-            <a href="project1/methodology.md" class="btn" target="_blank">Methodology</a>
-            <a href="project1/primary_sources_used.md" class="btn" target="_blank">Primary Sources</a>
+            <button class="file-btn" onclick="showTextFile('project1/README.md', 'README.md')">README</button>
+            <button class="file-btn" onclick="showTextFile('project1/methodology.md', 'methodology.md')">Methodology</button>
+            <button class="file-btn" onclick="showTextFile('project1/primary_sources_used.md', 'primary_sources_used.md')">Primary Sources</button>
           </div>
         </div>
 
         <div class="file-group">
           <h3>Datasets</h3>
           <div class="file-list">
-            <a href="project1/census_coverage_1904.csv" class="btn" target="_blank">Census Coverage</a>
-            <a href="project1/derived_metrics.csv" class="btn" target="_blank">Derived Metrics</a>
-            <a href="project1/historical_observations.csv" class="btn" target="_blank">Historical Observations</a>
-            <a href="project1/lao_captive_communities.csv" class="btn" target="_blank">Lao Captive Communities</a>
-            <a href="project1/lao_labor_network_edges.csv" class="btn" target="_blank">Labor Network Edges</a>
-            <a href="project1/royal_captive_population_scenarios.csv" class="btn" target="_blank">Royal Captive Population</a>
-            <a href="project1/slave_scale_scenarios.csv" class="btn" target="_blank">Slave Scale Scenarios</a>
-            <a href="project1/source_registry.csv" class="btn" target="_blank">Source Registry</a>
+            <button class="file-btn" onclick="showCSV('project1/census_coverage_1904.csv', 'census_coverage_1904.csv')">Census Coverage</button>
+            <button class="file-btn" onclick="showCSV('project1/derived_metrics.csv', 'derived_metrics.csv')">Derived Metrics</button>
+            <button class="file-btn" onclick="showCSV('project1/historical_observations.csv', 'historical_observations.csv')">Historical Observations</button>
+            <button class="file-btn" onclick="showCSV('project1/lao_captive_communities.csv', 'lao_captive_communities.csv')">Lao Captive Communities</button>
+            <button class="file-btn" onclick="showCSV('project1/lao_labor_network_edges.csv', 'lao_labor_network_edges.csv')">Labor Network Edges</button>
+            <button class="file-btn" onclick="showCSV('project1/royal_captive_population_scenarios.csv', 'royal_captive_population_scenarios.csv')">Royal Captive Population</button>
+            <button class="file-btn" onclick="showCSV('project1/slave_scale_scenarios.csv', 'slave_scale_scenarios.csv')">Slave Scale Scenarios</button>
+            <button class="file-btn" onclick="showCSV('project1/source_registry.csv', 'source_registry.csv')">Source Registry</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>PDF Preview</h2>
-      <p>
-        Embedded preview of the full report.
-      </p>
-      <iframe src="project1/siam_slavery_report.pdf" class="pdf-preview"></iframe>
+    <section class="viewer-shell">
+      <div class="viewer-top">
+        <h2>File Viewer</h2>
+        <div class="viewer-name" id="viewerName">Currently showing: siam_slavery_report.pdf</div>
+      </div>
+
+      <iframe id="frameViewer" class="viewer-frame" src="project1/siam_slavery_report.pdf"></iframe>
+      <div id="textViewer" class="text-viewer"></div>
+      <div id="tableViewer" class="table-viewer"></div>
+      <div id="viewerMessage" class="viewer-message" style="display:none;"></div>
     </section>
 
     <section class="section">
@@ -362,6 +423,132 @@
       <a href="index.html" class="btn">Home</a>
     </div>
   </main>
+
+  <script>
+    const frameViewer = document.getElementById("frameViewer");
+    const textViewer = document.getElementById("textViewer");
+    const tableViewer = document.getElementById("tableViewer");
+    const viewerMessage = document.getElementById("viewerMessage");
+    const viewerName = document.getElementById("viewerName");
+
+    function resetViewers(name) {
+      viewerName.textContent = "Currently showing: " + name;
+      frameViewer.style.display = "none";
+      textViewer.style.display = "none";
+      tableViewer.style.display = "none";
+      viewerMessage.style.display = "none";
+      textViewer.textContent = "";
+      tableViewer.innerHTML = "";
+      viewerMessage.innerHTML = "";
+    }
+
+    function showFrame(path, name) {
+      resetViewers(name);
+      frameViewer.src = path;
+      frameViewer.style.display = "block";
+    }
+
+    function showPDF(path, name) {
+      showFrame(path, name);
+    }
+
+    function showDOCX(path, name) {
+      resetViewers(name);
+      const publicUrl = window.location.origin + "/" + path;
+      const officeViewer = "https://view.officeapps.live.com/op/embed.aspx?src=" + encodeURIComponent(publicUrl);
+      frameViewer.src = officeViewer;
+      frameViewer.style.display = "block";
+    }
+
+    async function showTextFile(path, name) {
+      resetViewers(name);
+      try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error("Could not load file.");
+        const text = await response.text();
+        textViewer.textContent = text;
+        textViewer.style.display = "block";
+      } catch (err) {
+        viewerMessage.innerHTML = 'Could not load this file inline. <a href="' + path + '" target="_blank">Open file</a>';
+        viewerMessage.style.display = "block";
+      }
+    }
+
+    async function showCSV(path, name) {
+      resetViewers(name);
+      try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error("Could not load CSV.");
+        const text = await response.text();
+        const rows = parseCSV(text);
+        tableViewer.innerHTML = buildTable(rows);
+        tableViewer.style.display = "block";
+      } catch (err) {
+        viewerMessage.innerHTML = 'Could not load this CSV inline. <a href="' + path + '" target="_blank">Open file</a>';
+        viewerMessage.style.display = "block";
+      }
+    }
+
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      return lines.map(line => {
+        const result = [];
+        let current = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          const next = line[i + 1];
+
+          if (char === '"' && inQuotes && next === '"') {
+            current += '"';
+            i++;
+          } else if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === "," && !inQuotes) {
+            result.push(current);
+            current = "";
+          } else {
+            current += char;
+          }
+        }
+
+        result.push(current);
+        return result;
+      });
+    }
+
+    function escapeHTML(str) {
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function buildTable(rows) {
+      if (!rows.length) return "<p>No data found.</p>";
+
+      let html = '<table class="csv-table">';
+      const header = rows[0];
+
+      html += "<thead><tr>";
+      header.forEach(cell => {
+        html += "<th>" + escapeHTML(cell) + "</th>";
+      });
+      html += "</tr></thead><tbody>";
+
+      rows.slice(1).forEach(row => {
+        html += "<tr>";
+        row.forEach(cell => {
+          html += "<td>" + escapeHTML(cell) + "</td>";
+        });
+        html += "</tr>";
+      });
+
+      html += "</tbody></table>";
+      return html;
+    }
+  </script>
 
 </body>
 </html>
