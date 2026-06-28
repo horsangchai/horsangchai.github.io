@@ -1,363 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Projects by Malachi Horsangchai combining data science, statistics, political analysis, and historical research."
-  />
-  <title>Projects — Malachi Horsangchai</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Title</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
-    }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
 
-    .left {
-      width: 58%;
-      padding: 72px 56px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        radial-gradient(circle at top left, rgba(148, 163, 184, 0.14), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.05), transparent 28%),
-        #f8fafc;
-    }
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-    .right {
-      width: 42%;
-      position: relative;
-      background:
-        linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.45)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-      background-size: cover;
-      background-position: center;
-    }
+.description {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
 
-    .eyebrow {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #64748b;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
+.section {
+  margin-bottom: 40px;
+}
 
-    h1 {
-      font-size: 52px;
-      line-height: 1.02;
-      margin: 0 0 18px 0;
-      max-width: 520px;
-    }
+.section h2 {
+  margin-bottom: 12px;
+}
 
-    .intro {
-      max-width: 620px;
-      font-size: 17px;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 38px;
-    }
+.file-list a {
+  display: inline-block;
+  margin: 6px 10px 6px 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
 
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 720px;
-    }
+.file-list a:hover {
+  background: #f1f5f9;
+}
 
-    .project {
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(6px);
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 24px;
-      transition: 0.22s ease;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-    }
+iframe {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
 
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-    }
+.back {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  font-weight: 600;
+}
 
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 10px;
-      gap: 16px;
-    }
-
-    .project-number {
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #94a3b8;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 5px;
-    }
-
-    .project h3 {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.2;
-    }
-
-    .project p {
-      margin: 10px 0 16px 0;
-      color: #475569;
-      line-height: 1.7;
-      font-size: 15.5px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .tag {
-      font-size: 12px;
-      font-weight: 700;
-      color: #334155;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 999px;
-      padding: 6px 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-      background: white;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      background: #f1f5f9;
-      transform: translateY(-2px);
-    }
-
-    .btn:focus {
-      outline: 3px solid #94a3b8;
-      outline-offset: 3px;
-    }
-
-    .btn.primary {
-      background: #0f172a;
-      color: white;
-      border-color: #0f172a;
-    }
-
-    .btn.primary:hover {
-      background: #1e293b;
-    }
-
-    .footer-nav {
-      margin-top: 34px;
-    }
-
-    .side-content {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
-      right: 40px;
-      color: white;
-    }
-
-    .side-label {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .side-quote {
-      font-size: 26px;
-      line-height: 1.3;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .side-note {
-      font-size: 14px;
-      opacity: 0.85;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 1000px) {
-      .container {
-        flex-direction: column;
-      }
-
-      .left,
-      .right {
-        width: 100%;
-      }
-
-      .left {
-        padding: 56px 32px;
-      }
-
-      .right {
-        min-height: 300px;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .left {
-        padding: 48px 24px;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      .project {
-        padding: 20px;
-      }
-
-      .project-top {
-        flex-direction: column-reverse;
-        gap: 6px;
-      }
-
-      .side-content {
-        left: 24px;
-        right: 24px;
-        bottom: 28px;
-      }
-
-      .side-quote {
-        font-size: 22px;
-      }
-    }
-  </style>
+.back:hover {
+  background: #f1f5f9;
+}
+</style>
 </head>
 
 <body>
 
-  <main class="container">
+<div class="container">
 
-    <section class="left">
-      <div class="eyebrow">Data Science · Statistics · Politics · History</div>
+  <!-- TITLE -->
+  <h1>Project Title</h1>
 
-      <h1>Projects</h1>
+  <!-- DESCRIPTION -->
+  <p class="description">
+    Write your project description here. Explain what the project is,
+    what methods you used, and what it shows.
+  </p>
 
-      <p class="intro">
-        A selection of projects combining statistical analysis, historical research, political data, and experimental design. My work focuses on using data to study society, institutions, uncertainty, and decision-making.
-      </p>
+  <!-- FILE LINKS -->
+  <div class="section">
+    <h2>Files</h2>
+    <div class="file-list">
+      <a href="files/project/file.pdf" target="_blank">PDF</a>
+      <a href="files/project/file.docx" target="_blank">DOCX</a>
+      <a href="files/project/file.ipynb" target="_blank">Notebook</a>
+      <a href="files/project/file.md" target="_blank">Markdown</a>
+      <a href="files/project/file.py" target="_blank">Python</a>
+      <a href="files/project/file.csv" target="_blank">CSV</a>
+      <a href="files/project/file.txt" target="_blank">Text</a>
+    </div>
+  </div>
 
-      <div class="projects-list">
+  <!-- PDF PREVIEW (optional but recommended) -->
+  <div class="section">
+    <h2>Preview</h2>
+    <iframe src="files/project/file.pdf"></iframe>
+  </div>
 
-        <div class="project">
-          <div class="project-top">
-            <h3>Slavery in Late-19th-Century Siam</h3>
-            <div class="project-number">01</div>
-          </div>
+  <!-- BACK BUTTON -->
+  <a href="projects.html" class="back">← Back to Projects</a>
 
-          <p>
-            A data science reconstruction of slavery in Siam from 1850 to 1905, with a focus on Lao and Isan exploitation. Built from historical sources and coded observations, the project estimates slave-stock ranges, debt-redemption burdens, census omission, and Bangkok-centered labor extraction.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Historical Data</span>
-            <span class="tag">Statistical Reconstruction</span>
-            <span class="tag">Data Coding</span>
-            <span class="tag">Visualization</span>
-          </div>
-
-          <a href="projects1.html" class="btn primary">View Project</a>
-        </div>
-
-        <div class="project">
-          <div class="project-top">
-            <h3>Why Do Big-City Mayoral Elections Flip?</h3>
-            <div class="project-number">02</div>
-          </div>
-
-          <p>
-            A statistical comparison of mayoral elections in major American cities, studying cases where cities shift between Republican-leaning and Democratic-leaning mayoral leadership. The project examines vote margins, turnout, incumbency, demographics, and broader political change.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Election Data</span>
-            <span class="tag">Regression Analysis</span>
-            <span class="tag">Turnout</span>
-            <span class="tag">Political Geography</span>
-          </div>
-
-          <a href="projects2.html" class="btn primary">View Project</a>
-        </div>
-
-        <div class="project">
-          <div class="project-top">
-            <h3>How Many Users Do You Need?</h3>
-            <div class="project-number">03</div>
-          </div>
-
-          <p>
-            An experiment design and A/B testing simulator focused on statistical power, sample size, hypothesis testing, and Bayesian inference. The project compares p-values, confidence intervals, credible intervals, false positives, and decision uncertainty across simulated experiments.
-          </p>
-
-          <div class="tags">
-            <span class="tag">A/B Testing</span>
-            <span class="tag">Statistical Power</span>
-            <span class="tag">Bayesian Inference</span>
-            <span class="tag">Simulation</span>
-          </div>
-
-          <a href="projects3.html" class="btn primary">View Project</a>
-        </div>
-
-      </div>
-
-      <div class="footer-nav">
-        <a href="index.html" class="btn">← Back to Home</a>
-      </div>
-
-    </section>
-
-    <aside class="right">
-      <div class="side-content">
-        <div class="side-label">Portfolio Focus</div>
-        <div class="side-quote">
-          Data science across history, politics, and statistical decision-making.
-        </div>
-        <div class="side-note">
-          Projects combining research, quantitative analysis, visualization, modeling, and uncertainty.
-        </div>
-      </div>
-    </aside>
-
-  </main>
+</div>
 
 </body>
 </html>
