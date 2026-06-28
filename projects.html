@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Projects by Malachi Horsangchai combining data science, statistics, political analysis, and historical research."
+  />
   <title>Projects — Malachi Horsangchai</title>
 
   <style>
@@ -39,7 +43,7 @@
       position: relative;
       background:
         linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.45)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
       background-size: cover;
       background-position: center;
     }
@@ -93,6 +97,7 @@
     .project-top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       margin-bottom: 10px;
       gap: 16px;
     }
@@ -104,6 +109,7 @@
       color: #94a3b8;
       font-weight: 700;
       flex-shrink: 0;
+      margin-top: 5px;
     }
 
     .project h3 {
@@ -113,10 +119,27 @@
     }
 
     .project p {
-      margin: 10px 0 18px 0;
+      margin: 10px 0 16px 0;
       color: #475569;
       line-height: 1.7;
       font-size: 15.5px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      padding: 6px 10px;
     }
 
     .btn {
@@ -134,6 +157,11 @@
     .btn:hover {
       background: #f1f5f9;
       transform: translateY(-2px);
+    }
+
+    .btn:focus {
+      outline: 3px solid #94a3b8;
+      outline-offset: 3px;
     }
 
     .btn.primary {
@@ -185,8 +213,13 @@
         flex-direction: column;
       }
 
-      .left, .right {
+      .left,
+      .right {
         width: 100%;
+      }
+
+      .left {
+        padding: 56px 32px;
       }
 
       .right {
@@ -197,81 +230,134 @@
         font-size: 40px;
       }
     }
+
+    @media (max-width: 600px) {
+      .left {
+        padding: 48px 24px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .project {
+        padding: 20px;
+      }
+
+      .project-top {
+        flex-direction: column-reverse;
+        gap: 6px;
+      }
+
+      .side-content {
+        left: 24px;
+        right: 24px;
+        bottom: 28px;
+      }
+
+      .side-quote {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<main class="container">
+  <main class="container">
 
-  <section class="left">
-    <div class="eyebrow"> </div>
+    <section class="left">
+      <div class="eyebrow">Data Science · Statistics · Politics · History</div>
 
-    <h1>Projects</h1>
+      <h1>Projects</h1>
 
-    <p class="intro">
-    </p>
+      <p class="intro">
+        A selection of projects combining statistical analysis, historical research, political data, and experimental design. My work focuses on using data to study society, institutions, uncertainty, and decision-making.
+      </p>
 
-    <div class="projects-list">
+      <div class="projects-list">
 
-      <div class="project">
-        <div class="project-top">
-          <h3>Slavery in Late-19th-Century Siam</h3>
-          <div class="project-number">01</div>
+        <div class="project">
+          <div class="project-top">
+            <h3>Slavery in Late-19th-Century Siam</h3>
+            <div class="project-number">01</div>
+          </div>
+
+          <p>
+            A data science reconstruction of slavery in Siam from 1850 to 1905, with a focus on Lao and Isan exploitation. Built from historical sources and coded observations, the project estimates slave-stock ranges, debt-redemption burdens, census omission, and Bangkok-centered labor extraction.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Historical Data</span>
+            <span class="tag">Statistical Reconstruction</span>
+            <span class="tag">Data Coding</span>
+            <span class="tag">Visualization</span>
+          </div>
+
+          <a href="projects1.html" class="btn primary">View Project</a>
         </div>
-        <p>
-          A portfolio-level data science reconstruction of slavery in Siam from 1850 to 1905,
-          with a focus on Lao / Isan exploitation. Built from 10 historical sources and 252 coded observations,
-          the project reconstructs slave-stock ranges, debt-redemption burdens, census omission, and Bangkok-centered labor extraction.
-        </p>
-        <a href="projects1.html" class="btn primary">View Project</a>
-      </div>
 
-      <div class="project">
-        <div class="project-top">
-          <h3>Quantitative Analysis of Electoral Systems</h3>
-          <div class="project-number">02</div>
+        <div class="project">
+          <div class="project-top">
+            <h3>Why Do Big-City Mayoral Elections Flip?</h3>
+            <div class="project-number">02</div>
+          </div>
+
+          <p>
+            A statistical comparison of mayoral elections in major American cities, studying cases where cities shift between Republican-leaning and Democratic-leaning mayoral leadership. The project examines vote margins, turnout, incumbency, demographics, and broader political change.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Election Data</span>
+            <span class="tag">Regression Analysis</span>
+            <span class="tag">Turnout</span>
+            <span class="tag">Political Geography</span>
+          </div>
+
+          <a href="projects2.html" class="btn primary">View Project</a>
         </div>
-        <p>
-          Statistical comparison of proportional and majoritarian systems,
-          focusing on representation distortion and long-term political stability.
-        </p>
-        <a href="projects2.html" class="btn primary">View Project</a>
-      </div>
 
-      <div class="project">
-        <div class="project-top">
-          <h3>Historical Data Study: Political Transitions</h3>
-          <div class="project-number">03</div>
+        <div class="project">
+          <div class="project-top">
+            <h3>How Many Users Do You Need?</h3>
+            <div class="project-number">03</div>
+          </div>
+
+          <p>
+            An experiment design and A/B testing simulator focused on statistical power, sample size, hypothesis testing, and Bayesian inference. The project compares p-values, confidence intervals, credible intervals, false positives, and decision uncertainty across simulated experiments.
+          </p>
+
+          <div class="tags">
+            <span class="tag">A/B Testing</span>
+            <span class="tag">Statistical Power</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">Simulation</span>
+          </div>
+
+          <a href="projects3.html" class="btn primary">View Project</a>
         </div>
-        <p>
-          Time-series analysis of regime change across regions,
-          combining historical research with regression modeling.
-        </p>
-        <a href="projects3.html" class="btn primary">View Project</a>
+
       </div>
 
-    </div>
-
-    <div class="footer-nav">
-      <a href="index.html" class="btn">← Back to Home</a>
-    </div>
-
-  </section>
-
-  <aside class="right">
-    <div class="side-content">
-      <div class="side-label">Current Focus</div>
-      <div class="side-quote">
-        History, institutions, labor, and the structure of political change.
+      <div class="footer-nav">
+        <a href="index.html" class="btn">← Back to Home</a>
       </div>
-      <div class="side-note">
-        Research combining archival work, statistical reconstruction, and comparative political analysis.
-      </div>
-    </div>
-  </aside>
 
-</main>
+    </section>
+
+    <aside class="right">
+      <div class="side-content">
+        <div class="side-label">Portfolio Focus</div>
+        <div class="side-quote">
+          Data science across history, politics, and statistical decision-making.
+        </div>
+        <div class="side-note">
+          Projects combining research, quantitative analysis, visualization, modeling, and uncertainty.
+        </div>
+      </div>
+    </aside>
+
+  </main>
 
 </body>
 </html>
