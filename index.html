@@ -32,8 +32,8 @@
 
     .right {
       width: 50%;
-      background: linear-gradient(rgba(15,23,42,0.35), rgba(15,23,42,0.35)),
-        url('https://images.unsplash.com/photo-1570129477492-45c003edd2be');
+      background: linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.35)),
+        url("https://images.unsplash.com/photo-1570129477492-45c003edd2be");
       background-size: cover;
       background-position: center;
     }
@@ -92,6 +92,12 @@
       transform: translateY(-2px);
     }
 
+    .btn:focus,
+    .socials a:focus {
+      outline: 3px solid #94a3b8;
+      outline-offset: 3px;
+    }
+
     .socials a {
       display: inline-block;
       margin: 6px 8px 0 0;
@@ -101,10 +107,14 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
+      color: #0f172a;
+      background: white;
+      transition: 0.2s ease;
     }
 
     .socials a:hover {
       background: #f1f5f9;
+      transform: translateY(-2px);
     }
 
     @media (max-width: 900px) {
@@ -134,38 +144,37 @@
 
 <body>
 
-<main class="container">
-  <section class="left">
+  <main class="container">
+    <section class="left">
 
-    <h1>Malachi Horsangchai</h1>
+      <h1>Malachi Horsangchai</h1>
 
-    <div class="alt-names">
-      何其昭 · นครินทร์ ฮ้อแสงชัย
-    </div>
+      <div class="alt-names">
+        何其昭 · นครินทร์ ฮ้อแสงชัย
+      </div>
 
-    <p class="bio">
-     Hello there! My name is Malachi and I am a recent graduated from the Univerisity of Rochester.
-      This website currently serves to be a personal data science profolio.
-    </p>
+      <p class="bio">
+        Hello! I’m Malachi Horsangchai, a recent graduate of the University of Rochester with an interest in data science, analytics, and turning data into useful insights. This website showcases my data science projects, technical skills, and professional interests.
+      </p>
 
-    <div class="button-group">
-      <a href="projects.html" class="btn">Projects</a>
-      <a href="contact.html" class="btn">Contact</a>
-    </div>
+      <div class="button-group">
+        <a href="projects.html" class="btn">Projects</a>
+        <a href="contact.html" class="btn">Contact</a>
+      </div>
 
-    <div class="socials">
-      <a href="https://www.facebook.com" target="_blank">Facebook</a>
-      <a href="https://www.x.com" target="_blank">X</a>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com" target="_blank">YouTube</a>
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://www.github.com" target="_blank">Github</a>
-    </div>
+      <div class="socials">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
 
-  </section>
+    </section>
 
-  <aside class="right"></aside>
-</main>
+    <aside class="right" aria-hidden="true"></aside>
+  </main>
 
 </body>
 </html>
