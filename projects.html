@@ -1,328 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Projects by Malachi Horsangchai combining data science, statistics, political analysis, and historical research."
-  />
-  <title>Projects — Malachi Horsangchai</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#60283d">
+  <meta name="description" content="Explore projects by Malachi Horsangchai.">
+  <meta name="author" content="Malachi Horsangchai">
+
+  <link rel="canonical" href="https://horsangchai.com/projects.html">
+
+  <title>Projects | Malachi Horsangchai</title>
 
   <style>
+    :root {
+      color-scheme: light;
+      --paper: #faf8f5;
+      --surface: #f0eae5;
+      --ink: #282329;
+      --muted: #665e63;
+      --accent: #60283d;
+      --line: #dcd3ce;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    h1, h2, p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 0.3em;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
     }
 
     .container {
+      width: min(100% - 4rem, 72rem);
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* Shared header */
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 6.25rem;
       display: flex;
-      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
-    .left {
-      width: 58%;
-      padding: 72px 56px;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      letter-spacing: -0.06em;
+    }
+
+    .brand-name {
+      font-size: 0.9375rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-list {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        radial-gradient(circle at top left, rgba(148, 163, 184, 0.14), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.05), transparent 28%),
-        #f8fafc;
+      gap: 1.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .right {
-      width: 42%;
-      position: relative;
-      background:
-        linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.45)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-      background-size: cover;
-      background-position: center;
+    .nav-list a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+      text-decoration: none;
     }
 
-    .eyebrow {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #64748b;
-      font-weight: 700;
-      margin-bottom: 14px;
+    .nav-list a[aria-current="page"] {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    .nav-list a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Project overview */
+
+    .projects-main {
+      padding-block: 4.75rem;
     }
 
     h1 {
-      font-size: 52px;
-      line-height: 1.02;
-      margin: 0 0 18px 0;
-      max-width: 520px;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 6.2vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.055em;
     }
 
-    .intro {
-      max-width: 620px;
-      font-size: 17px;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 38px;
+    .intro-copy {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 1.125rem;
     }
 
-    .projects-list {
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      list-style: none;
+      padding: 0;
+      margin: 3rem 0 0;
+    }
+
+    .project-list li {
+      min-width: 0;
+    }
+
+    .project-link {
       display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 720px;
+      align-items: center;
+      min-height: 11rem;
+      height: 100%;
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--accent);
+      text-decoration: none;
+      transition:
+        background-color 180ms ease,
+        border-color 180ms ease;
     }
 
-    .project {
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(6px);
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 24px;
-      transition: 0.22s ease;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    .project-link:hover {
+      border-color: var(--accent);
+      background: var(--surface);
     }
 
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    .project-link:hover h2 {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
     }
 
-    .project-top {
+    .project-link h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    /* Shared footer */
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 10px;
-      gap: 16px;
+      align-items: center;
+      gap: 1rem;
+      padding-block: 1.6rem;
+      color: var(--muted);
+      font-size: 0.875rem;
     }
 
-    .project-number {
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #94a3b8;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 5px;
-    }
-
-    .project h3 {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.2;
-    }
-
-    .project p {
-      margin: 10px 0 16px 0;
-      color: #475569;
-      line-height: 1.7;
-      font-size: 15.5px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .tag {
-      font-size: 12px;
-      font-weight: 700;
-      color: #334155;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 999px;
-      padding: 6px 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 999px;
+    .footer-inner a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
       text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-      background: white;
-      transition: 0.2s ease;
     }
 
-    .btn:hover {
-      background: #f1f5f9;
-      transform: translateY(-2px);
+    .footer-inner a:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
 
-    .btn:focus {
-      outline: 3px solid #94a3b8;
-      outline-offset: 3px;
-    }
+    /* Responsive layout */
 
-    .btn.primary {
-      background: #0f172a;
-      color: white;
-      border-color: #0f172a;
-    }
-
-    .btn.primary:hover {
-      background: #1e293b;
-    }
-
-    .footer-nav {
-      margin-top: 34px;
-    }
-
-    .side-content {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
-      right: 40px;
-      color: white;
-    }
-
-    .side-label {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .side-quote {
-      font-size: 26px;
-      line-height: 1.3;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .side-note {
-      font-size: 14px;
-      opacity: 0.85;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 1000px) {
+    @media (max-width: 48rem) {
       .container {
-        flex-direction: column;
+        width: min(100% - 2.5rem, 38rem);
       }
 
-      .left,
-      .right {
-        width: 100%;
+      .header-inner {
+        min-height: 5.5rem;
       }
 
-      .left {
-        padding: 56px 32px;
+      .brand-name {
+        display: none;
       }
 
-      .right {
-        min-height: 300px;
+      .nav-list {
+        gap: 1.25rem;
+      }
+
+      .projects-main {
+        padding-block: 3rem;
       }
 
       h1 {
-        font-size: 40px;
+        font-size: clamp(3.25rem, 10.5vw, 4.75rem);
+      }
+
+      .intro-copy {
+        font-size: 1.0625rem;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .project-link {
+        min-height: 7.5rem;
+        padding: 1.5rem;
+      }
+
+      .project-link h2 {
+        font-size: 2.25rem;
       }
     }
 
-    @media (max-width: 600px) {
-      .left {
-        padding: 48px 24px;
+    @media (max-width: 32rem) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+    }
+
+    @media (max-width: 23rem) {
+      .container {
+        width: calc(100% - 2rem);
+      }
+
+      .nav-list {
+        gap: 1rem;
       }
 
       h1 {
-        font-size: 36px;
+        font-size: 3rem;
       }
+    }
 
-      .project {
-        padding: 20px;
-      }
-
-      .project-top {
-        flex-direction: column-reverse;
-        gap: 6px;
-      }
-
-      .side-content {
-        left: 24px;
-        right: 24px;
-        bottom: 28px;
-      }
-
-      .side-quote {
-        font-size: 22px;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="container">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Malachi Horsangchai — home"
+      >
+        <span class="monogram" aria-hidden="true">MH</span>
+        <span class="brand-name">Malachi Horsangchai</span>
+      </a>
 
-    <section class="left">
-      <h1>Projects</h1>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <div class="projects-list">
+  <main id="main" class="container projects-main" tabindex="-1">
+    <h1>Projects</h1>
 
-        <div class="project">
-          <div class="project-top">
-            <h3>Slavery in Late-19th-Century Siam</h3>
-            <div class="project-number">01</div>
-          </div>
+    <p class="intro-copy">
+      Click a project to learn more.
+    </p>
 
-          <p>
-            A reconstruction of slavery in Siam from 1850 to 1905, with a focus on Lao and Isan exploitation. Built from historical sources and coded observations, the project estimates slave-stock ranges, debt-redemption burdens, census omission, and Bangkok-centered labor extraction.
-          </p>
+    <ul class="project-list" aria-label="Projects">
+      <li>
+        <a class="project-link" href="projects1.html">
+          <h2>Project 1</h2>
+        </a>
+      </li>
 
-          <div class="tags">
-          </div>
+      <li>
+        <a class="project-link" href="projects2.html">
+          <h2>Project 2</h2>
+        </a>
+      </li>
 
-          <a href="projects1.html" class="btn primary">View Project</a>
-        </div>
-
-        <div class="project">
-          <div class="project-top">
-            <h3>Why Do Big-City Mayoral Elections Flip?</h3>
-            <div class="project-number">02</div>
-          </div>
-
-          <p>
-            A statistical comparison of mayoral elections in major American cities (Dallas, San Diego, Miami, etc.), studying cases where cities shift between Republican-leaning and Democratic-leaning mayoral leadership. The project examines vote margins, turnout, incumbency,and demographics.
-          </p>
-
-          <a href="projects2.html" class="btn primary">View Project</a>
-        </div>
-
-        <div class="project">
-          <div class="project-top">
-            <h3>How Many Users Do You Need?</h3>
-            <div class="project-number">03</div>
-          </div>
-
-          <p>
-            An experiment design and A/B testing simulator focused on statistical power, sample size, hypothesis testing, and Bayesian inference. The project compares p-values, confidence intervals, credible intervals, false positives, and decision uncertainty across simulated experiments.
-          </p>
-
-          <a href="projects3.html" class="btn primary">View Project</a>
-        </div>
-
-      </div>
-
-      <div class="footer-nav">
-        <a href="index.html" class="btn">← Back to Home</a>
-      </div>
-
-    </section>
-
-
+      <li>
+        <a class="project-link" href="projects3.html">
+          <h2>Project 3</h2>
+        </a>
+      </li>
+    </ul>
   </main>
 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; Malachi Horsangchai</p>
+      <a href="index.html">horsangchai.com</a>
+    </div>
+  </footer>
 </body>
 </html>
