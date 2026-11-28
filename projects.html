@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#60283d">
   <meta name="author" content="Malachi Horsangchai">
+
   <meta
     name="description"
     content="Projects by Malachi Horsangchai, exploring political and historical questions through mathematics, statistics, and data analysis."
   >
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects | Malachi Horsangchai">
+
   <meta
     property="og:description"
     content="Exploring political and historical questions through mathematics, statistics, and data analysis."
   >
+
   <meta property="og:url" content="https://horsangchai.com/projects.html">
   <link rel="canonical" href="https://horsangchai.com/projects.html">
 
@@ -33,7 +37,9 @@
       --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -48,9 +54,21 @@
       line-height: 1.7;
     }
 
-    main { flex: 1; }
-    h1, h2, h3, p { margin: 0; }
-    a { color: inherit; text-underline-offset: 0.25em; }
+    main {
+      flex: 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 0.25em;
+    }
 
     a:focus-visible {
       outline: 3px solid var(--accent);
@@ -58,7 +76,10 @@
       border-radius: 2px;
     }
 
-    ::selection { background: var(--accent); color: #fff; }
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
 
     .container {
       width: min(100% - 4rem, 72rem);
@@ -76,11 +97,15 @@
       transform: translateY(-200%);
     }
 
-    .skip-link:focus { transform: translateY(0); }
+    .skip-link:focus {
+      transform: translateY(0);
+    }
 
     /* Shared header */
 
-    .site-header { border-bottom: 1px solid var(--line); }
+    .site-header {
+      border-bottom: 1px solid var(--line);
+    }
 
     .header-inner {
       min-height: 6.25rem;
@@ -150,7 +175,9 @@
 
     /* Page introduction */
 
-    .projects-main { padding-block: 4.5rem; }
+    .projects-main {
+      padding-block: 4.5rem;
+    }
 
     h1 {
       font-family: var(--serif);
@@ -175,7 +202,9 @@
       border-top: 1px solid var(--line);
     }
 
-    .project-list > li { border-bottom: 1px solid var(--line); }
+    .project-list > li {
+      border-bottom: 1px solid var(--line);
+    }
 
     .project {
       display: grid;
@@ -191,18 +220,6 @@
       font-weight: 650;
       line-height: 1.6;
       letter-spacing: 0.02em;
-    }
-
-    .project-number a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 2.75rem;
-      text-decoration: none;
-    }
-
-    .project-number a:hover {
-      color: var(--accent-dark);
-      text-decoration: underline;
     }
 
     .project-status {
@@ -265,19 +282,11 @@
       line-height: 1.8;
     }
 
-    .project--placeholder {
-      align-items: center;
-      padding-block: 1rem;
-    }
-
-    .placeholder-copy {
-      color: var(--muted);
-      font-size: 0.9375rem;
-    }
-
     /* Shared footer */
 
-    .site-footer { border-top: 1px solid var(--line); }
+    .site-footer {
+      border-top: 1px solid var(--line);
+    }
 
     .footer-inner {
       display: flex;
@@ -305,15 +314,37 @@
     /* Smaller screens */
 
     @media (max-width: 48rem) {
-      .container { width: min(100% - 2.5rem, 38rem); }
-      .header-inner { min-height: 5.5rem; }
-      .brand-name { display: none; }
-      .nav-list { column-gap: 1.25rem; }
-      .projects-main { padding-block: 3rem; }
+      .container {
+        width: min(100% - 2.5rem, 38rem);
+      }
 
-      h1 { font-size: clamp(3.25rem, 10.5vw, 4.75rem); }
-      .intro-copy { font-size: 1.0625rem; }
-      .project-list { margin-top: 2rem; }
+      .header-inner {
+        min-height: 5.5rem;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .nav-list {
+        column-gap: 1.25rem;
+      }
+
+      .projects-main {
+        padding-block: 3rem;
+      }
+
+      h1 {
+        font-size: clamp(3.25rem, 10.5vw, 4.75rem);
+      }
+
+      .intro-copy {
+        font-size: 1.0625rem;
+      }
+
+      .project-list {
+        margin-top: 2rem;
+      }
 
       .project {
         grid-template-columns: 1fr;
@@ -328,17 +359,17 @@
         gap: 0.25rem 1rem;
       }
 
-      .project-status { margin-top: 0; }
-      .project-title { font-size: clamp(1.625rem, 5.5vw, 2.125rem); }
-      .project-abstract { font-size: 1rem; }
-
-      .project--placeholder {
-        grid-template-columns: auto minmax(0, 1fr);
-        gap: 1rem;
-        padding-block: 0.9rem;
+      .project-status {
+        margin-top: 0;
       }
 
-      .placeholder-copy { text-align: right; }
+      .project-title {
+        font-size: clamp(1.625rem, 5.5vw, 2.125rem);
+      }
+
+      .project-abstract {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 32rem) {
@@ -350,9 +381,17 @@
     }
 
     @media (max-width: 23rem) {
-      .container { width: calc(100% - 2rem); }
-      .nav-list { column-gap: 1rem; }
-      h1 { font-size: 3rem; }
+      .container {
+        width: calc(100% - 2rem);
+      }
+
+      .nav-list {
+        column-gap: 1rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
@@ -362,16 +401,26 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Malachi Horsangchai — home">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Malachi Horsangchai — home"
+      >
         <span class="monogram" aria-hidden="true">MH</span>
         <span class="brand-name">Malachi Horsangchai</span>
       </a>
 
       <nav aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html" aria-current="page">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="projects.html" aria-current="page">Projects</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -382,27 +431,77 @@
     <p class="intro-copy">Click a project to learn more.</p>
 
     <ul class="project-list" aria-label="Research projects" role="list">
-      <!-- Project 1: replace this placeholder when the overview is ready. -->
+
+      <!-- Project 1 -->
+
       <li>
-        <article class="project project--placeholder" aria-labelledby="project-1-title">
-          <h2 id="project-1-title" class="project-number">
-            <a href="projects1.html">Project 1</a>
-          </h2>
-          <p class="placeholder-copy">Project details coming soon.</p>
+        <article class="project" aria-labelledby="project-1-title">
+          <div class="project-meta">
+            <p class="project-number">Project 1</p>
+            <p class="project-status">Planned research</p>
+          </div>
+
+          <div class="project-content">
+            <h2 id="project-1-title" class="project-title">
+              <a href="projects1.html">
+                Which Democrats performed best in the 2026 midterm elections?
+              </a>
+            </h2>
+
+            <p class="project-author">Malachi Horsangchai</p>
+
+            <h3 class="methods-heading">Research methods</h3>
+
+            <p class="project-abstract">
+              This project will examine Democratic candidates’ performance
+              in the 2026 U.S. House elections using election returns,
+              district characteristics, and candidate records. It will
+              compare candidates with different political profiles,
+              including democratic socialists, while considering incumbency,
+              prior voting patterns, and the districts they contested.
+              The analysis will assess performance relative to local
+              electoral baselines and distinguish observed associations
+              from explanations of why voters supported particular candidates.
+            </p>
+          </div>
         </article>
       </li>
 
-      <!-- Project 2: replace this placeholder when the overview is ready. -->
+      <!-- Project 2 -->
+
       <li>
-        <article class="project project--placeholder" aria-labelledby="project-2-title">
-          <h2 id="project-2-title" class="project-number">
-            <a href="projects2.html">Project 2</a>
-          </h2>
-          <p class="placeholder-copy">Project details coming soon.</p>
+        <article class="project" aria-labelledby="project-2-title">
+          <div class="project-meta">
+            <p class="project-number">Project 2</p>
+            <p class="project-status">Planned research</p>
+          </div>
+
+          <div class="project-content">
+            <h2 id="project-2-title" class="project-title">
+              <a href="projects2.html">
+                How much does hosting help at the SEA Games?
+              </a>
+            </h2>
+
+            <p class="project-author">Malachi Horsangchai</p>
+
+            <h3 class="methods-heading">Research methods</h3>
+
+            <p class="project-abstract">
+              This project will measure how countries’ shares of gold medals
+              change when they host the Southeast Asian Games. Comparisons
+              across editions will account for countries’ usual performance
+              and examine whether changes in sport selection are associated
+              with larger host advantages. The study will distinguish
+              measurable patterns from allegations of unfair judging or
+              manipulation, which cannot be established from medal totals alone.
+            </p>
+          </div>
         </article>
       </li>
 
-      <!-- Project 3: proposed research; update this entry as the work develops. -->
+      <!-- Project 3 -->
+
       <li>
         <article class="project" aria-labelledby="project-3-title">
           <div class="project-meta">
@@ -420,6 +519,7 @@
             <p class="project-author">Malachi Horsangchai</p>
 
             <h3 class="methods-heading">Research methods</h3>
+
             <p class="project-abstract">
               This project will investigate whether the number of Mexicans
               descended from the House of Habsburg can be estimated from
@@ -433,6 +533,7 @@
           </div>
         </article>
       </li>
+
     </ul>
   </main>
 
