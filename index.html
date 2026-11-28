@@ -1,726 +1,554 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3ea">
-  <meta name="description" content="Malachi Horsangchai — 何其昭 · นครินทร์ ฮ้อแสงชัย ">
+  <meta name="theme-color" content="#60283d">
 
-  <title>Malachi Horsangchai</title>
+  <meta
+    name="description"
+    content="The personal portfolio of Malachi Horsangchai, a University of Rochester graduate with degrees in Statistics, Political Science, and History."
+  >
+  <meta name="author" content="Malachi Horsangchai">
+
+  <meta property="og:type" content="website">
+  <meta
+    property="og:title"
+    content="Malachi Horsangchai | Personal Portfolio"
+  >
+  <meta
+    property="og:description"
+    content="California born. Bangkokian roots. Hong Kong raised. Explore Malachi Horsangchai’s project portfolio and connect online."
+  >
+  <meta property="og:url" content="https://horsangchai.com/">
+
+  <link rel="canonical" href="https://horsangchai.com/">
+
+  <title>Malachi Horsangchai | Personal Portfolio</title>
 
   <style>
+    /* Change these colors to update the entire page. */
     :root {
-      --paper: #f7f3ea;
-      --white: #fffcf6;
-      --ink: #262332;
-      --muted: #625d6b;
-      --violet: #5d39d3;
-      --orange: #f28c55;
-      --lime: #dce995;
-      --lavender: #ddd3fa;
-      --line: #d9d2c9;
+      color-scheme: light;
+
+      --paper: #faf8f5;
+      --surface: #f0eae5;
+      --ink: #282329;
+      --muted: #665e63;
+      --accent: #60283d;
+      --accent-dark: #421b2b;
+      --line: #dcd3ce;
+
+      --serif: Georgia, "Times New Roman", serif;
+      --sans:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
     }
 
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
     a {
       color: inherit;
-      text-underline-offset: .22em;
+      text-underline-offset: 0.3em;
     }
 
-    button, input, textarea { font: inherit; }
-    button { cursor: pointer; }
-
-    :focus-visible {
-      outline: 3px solid var(--violet);
+    a:focus-visible {
+      outline: 3px solid var(--accent);
       outline-offset: 5px;
+      border-radius: 3px;
     }
 
     ::selection {
-      background: var(--lime);
-      color: var(--ink);
+      background: var(--accent);
+      color: #fff;
     }
 
-    .wrap {
-      width: min(1160px, calc(100% - 48px));
+    h1,
+    h2,
+    p,
+    figure {
+      margin: 0;
+    }
+
+    .container {
+      width: min(100% - 4rem, 72rem);
       margin-inline: auto;
     }
 
-    .skip {
-      position: absolute;
-      left: 16px;
-      top: -100px;
-      padding: 12px;
-      background: var(--ink);
-      color: white;
-      z-index: 20;
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
-    .skip:focus { top: 12px; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
 
-    /* Navigation */
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: white;
+      transform: translateY(-200%);
+    }
 
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* Header */
     .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding-block: 26px;
       border-bottom: 1px solid var(--line);
     }
 
+    .header-inner {
+      min-height: 6.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.85rem;
       text-decoration: none;
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -.06em;
     }
 
-    .brand svg {
-      width: 28px;
-      height: 28px;
-      color: var(--violet);
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      letter-spacing: -0.06em;
     }
 
-    .nav {
+    .brand-name {
+      font-size: 0.9375rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-list {
       display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list a {
+      display: inline-flex;
       align-items: center;
-      gap: 25px;
-    }
-
-    .nav a {
-      padding-block: 12px;
+      min-height: 2.75rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
       text-decoration: none;
-      font-size: 14px;
     }
 
-    .nav a:hover { color: var(--violet); }
+    .nav-list a[aria-current="page"] {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    .nav-list a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
 
     /* Introduction */
-
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      grid-template-columns: 1.16fr 0.84fr;
       align-items: center;
-      gap: 64px;
-      padding-block: 84px 100px;
+      gap: clamp(2rem, 5vw, 5rem);
+      padding-block: 4.75rem;
     }
 
-    .eyebrow {
-      margin: 0 0 24px;
-      color: var(--violet);
-      font-family: ui-monospace, monospace;
-      font-size: 14px;
-      line-height: 1.6;
+    .hero .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero .eyebrow::before {
+      content: "";
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(52px, 7.4vw, 96px);
-      line-height: .99;
-      letter-spacing: -.065em;
-      font-weight: 800;
-    }
-
-    .nickname {
-      display: block;
-      margin-block: 12px 14px;
-      font-family: Georgia, serif;
-      font-size: .38em;
-      font-style: italic;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 6.4vw, 5.75rem);
       font-weight: 400;
-      letter-spacing: -.025em;
+      line-height: 1.02;
+      letter-spacing: -0.055em;
     }
 
-    .surname { color: var(--violet); }
-
-    .native-names {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 4px 12px;
-      margin: 25px 0 0;
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.85;
+    h1 span {
+      display: block;
     }
 
-    .native-names [lang="zh-Hant"] {
-      font-family:
-        "PingFang TC",
-        "Microsoft JhengHei",
-        "Noto Sans CJK TC",
-        sans-serif;
+    h1 em {
+      color: var(--accent);
+      font-weight: 400;
     }
 
-    .native-names [lang="th"] {
-      font-family:
-        "Noto Sans Thai",
-        "Leelawadee UI",
-        Thonburi,
-        sans-serif;
-    }
-
-    .intro {
-      max-width: 490px;
-      margin: 22px 0 0;
-      font-size: 19px;
-      line-height: 1.7;
+    .introduction {
+      max-width: 35rem;
+      margin-top: 1.75rem;
       color: var(--muted);
+      font-size: 1.125rem;
+      line-height: 1.85;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
+      gap: 0.8rem;
+      margin-top: 2rem;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 14px 22px;
-      border: 1.5px solid var(--ink);
-      border-radius: 9px;
-      color: var(--ink);
-      background: transparent;
+      min-height: 3.25rem;
+      padding: 0.7rem 1.4rem;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-align: center;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 700;
-      transition: transform .18s, box-shadow .18s;
+      transition:
+        background-color 180ms ease,
+        color 180ms ease;
     }
 
-    .button.primary {
-      background: var(--violet);
-      border-color: var(--violet);
-      color: white;
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
     }
 
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 4px 4px 0 var(--ink);
+    .button-primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
     }
 
-    /* Your original photo, framed with CSS */
+    .button-secondary {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      background: var(--surface);
+    }
 
     .portrait {
-      position: relative;
-      width: min(100% - 24px, 380px);
-      margin: 12px auto 0;
-      isolation: isolate;
+      width: 100%;
+      max-width: 28rem;
+      justify-self: end;
     }
 
-    .portrait::before {
-      content: "";
-      position: absolute;
-      inset: 24px -15px -14px 12px;
-      border: 1.5px solid var(--ink);
-      border-radius: 45% 45% 20px 20px;
-      background: var(--lavender);
-      transform: rotate(-7deg);
-      z-index: -1;
-    }
-
-    .portrait::after {
-      content: "";
-      position: absolute;
-      width: 115px;
-      height: 115px;
-      top: -19px;
-      right: -17px;
-      background: var(--lime);
-      border: 1.5px solid var(--ink);
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .portrait-window {
+    .portrait-frame {
       position: relative;
       aspect-ratio: 4 / 5;
       overflow: hidden;
-      background: var(--lavender);
-      border: 1.5px solid var(--ink);
-      border-radius: 45% 45% 18px 18px;
+      border-radius: 6px 6px 4rem 6px;
+      background: var(--surface);
     }
 
-    /*
-      Crop coordinates are tailored to your supplied
-      945 × 2048 screenshot.
-    */
-    .portrait-window img {
-      position: absolute;
-      width: 189%;
-      max-width: none;
-      height: auto;
-      left: -36%;
-      top: -163.2%;
-    }
-
-    .portrait-star {
-      position: absolute;
-      right: -28px;
-      bottom: 35px;
-      width: 90px;
-      height: 90px;
-      color: var(--orange);
-      transform: rotate(12deg);
-    }
-
-    .portrait figcaption {
-      position: relative;
-      display: table;
-      margin: -17px auto 0;
-      padding: 12px 20px;
-      background: var(--orange);
-      border: 1.5px solid var(--ink);
-      font-family: ui-monospace, monospace;
-      font-size: 15px;
-      transform: rotate(-4deg);
-    }
-
-    /* Sections */
-
-    .section {
-      padding-block: 64px;
-      border-top: 1px solid var(--line);
-      scroll-margin-top: 25px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.15;
-      letter-spacing: -.045em;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 24px;
-      margin-bottom: 30px;
-    }
-
-    .small-label {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    /* World map */
-
-    .map-card {
-      padding: 12px;
-      border: 1.5px solid var(--ink);
-      border-radius: 22px;
-      background: var(--white);
-    }
-
-    .map-window {
-      overflow-x: auto;
-      border-radius: 13px;
-      scrollbar-color: var(--violet) var(--lavender);
-      overscroll-behavior-inline: contain;
-    }
-
-    .world-map {
+    .portrait-frame img {
       display: block;
       width: 100%;
-      min-width: 760px;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 73%;
+
+      /* Hide the black borders in the original screenshot. */
+      transform: scale(1.42);
     }
 
-    .map-place { cursor: pointer; }
-
-    .map-place .leader {
-      fill: none;
-      stroke: var(--ink);
-      stroke-width: 1.6;
-      stroke-dasharray: 4 5;
-    }
-
-    .map-place .pin {
-      fill: var(--pin);
-      stroke: var(--ink);
-      stroke-width: 2;
-    }
-
-    .map-place .ring {
-      fill: none;
-      stroke: var(--ink);
-      stroke-width: 1.5;
-      opacity: .25;
-    }
-
-    .map-place .callout {
-      fill: var(--pin);
-      stroke: var(--ink);
-      stroke-width: 1.3;
-    }
-
-    .map-place .map-name {
-      font-size: 21px;
-      font-weight: 700;
-      fill: var(--ink);
-    }
-
-    .map-place .map-context {
-      font-size: 18px;
-      fill: var(--ink);
-    }
-
-    .map-place.hong-kong text { fill: white; }
-
-    .map-place.is-active .ring {
-      stroke-width: 3;
-      opacity: 1;
-    }
-
-    .map-place.is-active .callout,
-    .map-place:hover .callout {
-      stroke-width: 3;
-    }
-
-    .map-place:focus-visible { outline: none; }
-
-    .map-place:focus-visible .callout {
-      stroke-width: 5;
-    }
-
-    .map-controls {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      padding: 12px 8px 0;
-    }
-
-    .place-button {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-height: 68px;
-      padding: 12px;
-      border: 1.5px solid var(--line);
-      border-radius: 10px;
-      background: var(--white);
-      color: var(--ink);
-      text-align: left;
-    }
-
-    .place-button.is-active {
-      border-color: var(--ink);
-      background: var(--paper);
-      box-shadow: inset 0 -4px 0 var(--pin);
-    }
-
-    .place-button .swatch {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-      border: 1px solid var(--ink);
-      border-radius: 50%;
-      background: var(--pin);
-    }
-
-    .place-button strong {
-      display: block;
-      font-size: 16px;
-    }
-
-    .place-button small {
-      display: block;
-      margin-top: 3px;
-      font-size: 14px;
+    figcaption {
+      margin-top: 1rem;
       color: var(--muted);
-    }
-
-    .map-story {
-      min-height: 3.2em;
-      margin: 20px 12px 8px;
-      font-size: 17px;
+      font-size: 0.8125rem;
       line-height: 1.6;
     }
 
-    .map-credit {
-      margin: 14px 0 0;
-      text-align: right;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* About */
-
-    .about-grid {
+    /* Academic background */
+    .education {
       display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-      gap: 70px;
-    }
-
-    .about-copy p {
-      margin: 0 0 20px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .about-copy strong { color: var(--ink); }
-
-    .tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 26px;
-    }
-
-    .tools span {
-      padding: 9px 14px;
+      grid-template-columns: 1fr 1.15fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 2.25rem;
       border: 1px solid var(--line);
       border-radius: 6px;
-      font-family: ui-monospace, monospace;
-      font-size: 14px;
-      background: var(--white);
+      background: var(--surface);
     }
 
-    /* Contact form */
-
-    .contact {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-      gap: 50px;
-      margin-block: 10px 36px;
-      padding: 48px;
-      background: var(--violet);
-      color: white;
-      border-radius: 24px;
-      overflow: hidden;
-      scroll-margin-top: 25px;
-    }
-
-    .contact::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      left: -110px;
-      bottom: -120px;
-      border: 38px solid var(--orange);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .contact-copy { position: relative; }
-
-    .contact h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 5vw, 64px);
+    .education h2 {
+      margin-top: 0.35rem;
+      font-family: var(--serif);
+      font-size: 1.65rem;
       font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
     }
 
-    .contact-copy p {
-      margin: 20px 0;
-      font-size: 18px;
-      line-height: 1.7;
+    .degree-label {
+      margin-bottom: 0.65rem;
+      color: var(--muted);
+      font-size: 0.875rem;
     }
 
-    .social-link {
-      display: inline-flex;
+    .degree-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.65rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .degree-list li {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--paper);
+      font-size: 0.875rem;
+    }
+
+    /* Social links */
+    .social-section {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 2rem;
+      padding-block: 4.5rem;
+    }
+
+    .social-section h2 {
+      margin-top: 0.65rem;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .social-description {
+      max-width: 23rem;
+      margin-top: 1rem;
+      color: var(--muted);
+    }
+
+    .social-links {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-content: center;
+      gap: 0.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .social-links a {
+      display: flex;
+      min-height: 3.25rem;
       align-items: center;
-      gap: 10px;
-      min-height: 44px;
-      font-size: 16px;
+      justify-content: center;
+      padding: 0.65rem 0.5rem;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: transparent;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
     }
 
-    .social-link:focus-visible {
-      outline-color: var(--lime);
+    .social-links a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
     }
 
-    .contact-star {
-      display: block;
-      width: 74px;
-      height: 74px;
-      margin-top: 22px;
-      color: var(--lime);
-    }
-
-    .contact-form {
-      position: relative;
-      display: grid;
-      gap: 18px;
-      padding: 26px;
-      border-radius: 15px;
-      background: var(--white);
-      color: var(--ink);
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-    }
-
-    .field label {
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .field input,
-    .field textarea {
-      width: 100%;
-      min-width: 0;
-      border: 1px solid #a9a2b0;
-      border-radius: 7px;
-      padding: 13px 14px;
-      background: white;
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    .field textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    .contact-form .button { justify-self: start; }
-    .honey { display: none; }
-
+    /* Footer */
     .site-footer {
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
-      padding-block: 0 30px;
-      font-size: 14px;
+      align-items: center;
+      gap: 1rem;
+      padding-block: 1.6rem;
       color: var(--muted);
-      line-height: 1.6;
+      font-size: 0.875rem;
     }
 
-    .site-footer p { margin: 0; }
+    .footer-inner a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      text-decoration: none;
+    }
+
+    .footer-inner a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
 
     /* Tablet */
-
-    @media (max-width: 950px) {
+    @media (max-width: 62rem) {
       .hero {
-        gap: 36px;
-        padding-block: 65px 75px;
+        gap: 2rem;
       }
 
       h1 {
-        font-size: clamp(48px, 7.2vw, 68px);
+        font-size: clamp(3.1rem, 6.3vw, 4.75rem);
       }
 
-      .about-grid { gap: 36px; }
-
-      .contact {
-        gap: 28px;
-        padding: 32px;
-      }
-
-      .map-controls {
+      .social-links {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     /* Mobile */
-
-    @media (max-width: 700px) {
-      .wrap {
-        width: calc(100% - 36px);
+    @media (max-width: 48rem) {
+      .container {
+        width: min(100% - 2.5rem, 38rem);
       }
 
-      .site-header {
-        padding-block: 18px;
-        gap: 12px;
+      .header-inner {
+        min-height: 5.5rem;
       }
 
-      .nav { gap: 12px; }
-      .nav .desktop-link { display: none; }
+      .brand-name {
+        display: none;
+      }
+
+      .nav-list {
+        gap: 1.25rem;
+      }
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 52px;
-        padding-block: 50px 65px;
+        gap: 2.75rem;
+        padding-block: 3rem;
       }
 
       h1 {
-        font-size: clamp(46px, 10.5vw, 70px);
+        font-size: clamp(3.25rem, 10.5vw, 4.75rem);
       }
 
-      .intro { font-size: 18px; }
+      .introduction {
+        font-size: 1.0625rem;
+      }
 
       .portrait {
-        width: min(100% - 38px, 340px);
+        justify-self: center;
+        max-width: 26rem;
       }
 
-      .portrait-star {
-        right: -20px;
-        width: 75px;
-        height: 75px;
-      }
-
-      .section { padding-block: 46px; }
-      .section-heading { display: block; }
-
-      .section-heading .small-label {
-        margin-top: 12px;
-      }
-
-      .map-card { padding: 8px; }
-
-      .map-controls {
-        padding-inline: 0;
-        gap: 8px;
-      }
-
-      .place-button {
-        padding: 10px;
-        gap: 8px;
-      }
-
-      .place-button strong { font-size: 15px; }
-
-      .map-story {
-        margin-inline: 5px;
-        min-height: 4.8em;
-        font-size: 16px;
-      }
-
-      .about-grid,
-      .contact {
+      .education {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 1.5rem;
+        padding: 1.75rem;
       }
 
-      .contact { padding: 28px 20px; }
-      .contact-form { padding: 20px; }
-      .contact-star { display: none; }
+      .social-section {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding-block: 3rem;
+      }
 
-      .site-footer {
-        flex-wrap: wrap;
-        gap: 10px;
+      .social-description {
+        max-width: none;
+      }
+
+      .social-links {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 32rem) {
+      .actions {
+        flex-direction: column;
+      }
+
+      .social-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+    }
+
+    @media (max-width: 23rem) {
+      .container {
+        width: calc(100% - 2rem);
+      }
+
+      .nav-list {
+        gap: 1rem;
+      }
+
+      h1 {
+        font-size: 2.9rem;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-
       *,
       *::before,
       *::after {
-        animation: none !important;
         transition: none !important;
       }
     }
@@ -728,718 +556,201 @@
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header wrap" id="top">
-    <a
-      class="brand"
-      href="#top"
-      aria-label="Malachi Horsangchai home"
-    >
-      <svg viewBox="0 0 32 32" aria-hidden="true">
-        <path
-          d="M16 0 20 12 32 16 20 20 16 32 12 20 0 16 12 12Z"
-          fill="currentColor"
-        />
-      </svg>
-      miles.
-    </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Malachi Horsangchai — home"
+      >
+        <span class="monogram" aria-hidden="true">MH</span>
+        <span class="brand-name">Malachi Horsangchai</span>
+      </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a class="desktop-link" href="#about">About</a>
-      <a href="#background">My world</a>
-      <a href="https://horsangchai.com/projects.html">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
-    <!-- Introduction and photograph -->
+  <main id="main" class="container" tabindex="-1">
+    <section class="hero" aria-labelledby="intro-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">Personal portfolio</p>
 
-    <section class="hero wrap" aria-labelledby="name">
-      <div>
-        <p class="eyebrow">
-          STATISTICS · POLITICAL SCIENCE · HISTORY
-        </p>
-
-        <h1 id="name">
-          Malachi
-          <span class="nickname"></span>
-          <span class="surname">Horsangchai.</span>
+        <h1 id="intro-heading">
+          <span>Malachi</span>
+          <em>Horsangchai.</em>
         </h1>
 
-        <p class="native-names">
-          <span lang="zh-Hant">何其昭</span>
-          <span aria-hidden="true">·</span>
-          <span lang="th">นครินทร์ ฮ้อแสงชัย</span>
-        </p>
-
-        <p class="intro">
-          I’m a University of Rochester graduate interested in
-          data analysis, statistical modeling, and political research.
-        </p>
+        <p class="introduction">Hey, my name is Malachi, I am a recent graduate from the University of Rochester. This currently serves as my project portfolio. California born, Bangkokian roots, proudly raised in Hong Kong public schools.</p>
 
         <div class="actions">
-          <a
-            class="button primary"
-            href="https://horsangchai.com/projects.html"
-          >
-            Explore projects
+          <a class="button button-primary" href="projects.html">
+            Explore my projects
           </a>
 
-          <a class="button" href="#contact">
+          <a class="button button-secondary" href="contact.html">
             Get in touch
           </a>
         </div>
       </div>
 
       <figure class="portrait">
-        <div class="portrait-window">
+        <div class="portrait-frame">
+          <!-- Keep IMG_3071.png in the same folder as index.html. -->
           <img
-            src="portrait.png"
-            alt="Malachi (Miles) Horsangchai outdoors among trees"
+            src="IMG_3071.png"
+            alt="Malachi Horsangchai standing outdoors in the sunshine"
             width="945"
             height="2048"
             fetchpriority="high"
-            decoding="async"
           >
         </div>
 
-        <svg
-          class="portrait-star"
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-        >
-          <path
-            d="M50 3 62 35 97 50 62 63 50 97 37 63 3 50 37 35Z"
-            fill="currentColor"
-            stroke="#262332"
-            stroke-width="1.5"
-          />
-        </svg>
-
-        <figcaption>Hi, I’m Miles.</figcaption>
+        <figcaption>
+          California born. Bangkokian roots. Hong Kong raised.
+        </figcaption>
       </figure>
     </section>
 
-    <!-- Interactive world map -->
-
-    <section
-      class="section wrap"
-      id="background"
-      aria-labelledby="background-title"
-    >
-      <div class="section-heading">
-        <h2 id="background-title">
-          A few places, one story.
-        </h2>
-
-        <p class="small-label">
-          Select a place to explore. Swipe the map on smaller screens.
-        </p>
-      </div>
-
-      <div class="map-card">
-        <div
-          class="map-window"
-          id="map-window"
-          tabindex="0"
-          aria-label="World map. Scroll horizontally to see all four places."
-        >
-          <svg
-            class="world-map"
-            id="world-map"
-            viewBox="0 0 1000 420"
-            width="1000"
-            height="420"
-            role="group"
-            aria-labelledby="map-title map-description"
-          >
-            <title id="map-title">Places in my story</title>
-
-            <desc id="map-description">
-              Born in San Diego, California. Raised in Hong Kong.
-              Family from Bangkok. Went to university in
-              Rochester, New York.
-            </desc>
-
-            <defs>
-              <pattern
-                id="map-grid"
-                width="83.333"
-                height="83.333"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M83.333 0H0V83.333"
-                  fill="none"
-                  stroke="#d9d2c9"
-                  stroke-width=".8"
-                />
-              </pattern>
-            </defs>
-
-            <rect
-              width="1000"
-              height="420"
-              fill="#fffcf6"
-            />
-
-            <rect
-              width="1000"
-              height="420"
-              fill="url(#map-grid)"
-            />
-
-            <!-- Keep world-map.svg beside index.html. -->
-            <image
-              href="world-map.svg"
-              x="0"
-              y="0"
-              width="1000"
-              height="500"
-            />
-
-            <!-- California / San Diego -->
-
-            <g
-              class="map-place is-active"
-              data-place="california"
-              style="--pin:#f28c55"
-              role="button"
-              tabindex="0"
-              aria-pressed="true"
-              aria-controls="place-story"
-              aria-label="California: born in San Diego"
-            >
-              <path
-                class="leader"
-                d="M174.55 159.12 156 191 156 224"
-              />
-
-              <circle
-                class="ring"
-                cx="174.55"
-                cy="159.12"
-                r="16"
-              />
-
-              <circle
-                class="pin"
-                cx="174.55"
-                cy="159.12"
-                r="7"
-              />
-
-              <rect
-                class="callout"
-                x="54"
-                y="224"
-                width="228"
-                height="74"
-                rx="11"
-              />
-
-              <text class="map-name" x="72" y="254">
-                California
-              </text>
-
-              <text class="map-context" x="72" y="280">
-                Born in San Diego
-              </text>
-            </g>
-
-            <!-- New York / Rochester -->
-
-            <g
-              class="map-place"
-              data-place="new-york"
-              style="--pin:#fffcf6"
-              role="button"
-              tabindex="0"
-              aria-pressed="false"
-              aria-controls="place-story"
-              aria-label="New York: university in Rochester"
-            >
-              <path
-                class="leader"
-                d="M284.41 130.12 322 106 355 106"
-              />
-
-              <circle
-                class="ring"
-                cx="284.41"
-                cy="130.12"
-                r="16"
-              />
-
-              <circle
-                class="pin"
-                cx="284.41"
-                cy="130.12"
-                r="7"
-              />
-
-              <rect
-                class="callout"
-                x="310"
-                y="32"
-                width="238"
-                height="74"
-                rx="11"
-              />
-
-              <text class="map-name" x="328" y="62">
-                New York
-              </text>
-
-              <text class="map-context" x="328" y="88">
-                School in Rochester
-              </text>
-            </g>
-
-            <!-- Hong Kong -->
-
-            <g
-              class="map-place hong-kong"
-              data-place="hong-kong"
-              style="--pin:#5d39d3"
-              role="button"
-              tabindex="0"
-              aria-pressed="false"
-              aria-controls="place-story"
-              aria-label="Hong Kong: where I was raised"
-            >
-              <path
-                class="leader"
-                d="M817.14 188 854 160 854 147"
-              />
-
-              <circle
-                class="ring"
-                cx="817.14"
-                cy="188"
-                r="16"
-              />
-
-              <circle
-                class="pin"
-                cx="817.14"
-                cy="188"
-                r="7"
-              />
-
-              <rect
-                class="callout"
-                x="744"
-                y="73"
-                width="228"
-                height="74"
-                rx="11"
-              />
-
-              <text class="map-name" x="762" y="103">
-                Hong Kong
-              </text>
-
-              <text class="map-context" x="762" y="129">
-                Raised here
-              </text>
-            </g>
-
-            <!-- Bangkok -->
-
-            <g
-              class="map-place"
-              data-place="bangkok"
-              style="--pin:#dce995"
-              role="button"
-              tabindex="0"
-              aria-pressed="false"
-              aria-controls="place-story"
-              aria-label="Bangkok: where my family is from"
-            >
-              <path
-                class="leader"
-                d="M779.17 211.79 734 251 705 286"
-              />
-
-              <circle
-                class="ring"
-                cx="779.17"
-                cy="211.79"
-                r="16"
-              />
-
-              <circle
-                class="pin"
-                cx="779.17"
-                cy="211.79"
-                r="7"
-              />
-
-              <rect
-                class="callout"
-                x="578"
-                y="286"
-                width="246"
-                height="74"
-                rx="11"
-              />
-
-              <text class="map-name" x="596" y="316">
-                Bangkok
-              </text>
-
-              <text class="map-context" x="596" y="342">
-                My family is from here
-              </text>
-            </g>
-          </svg>
-        </div>
-
-        <div
-          class="map-controls"
-          role="group"
-          aria-label="Choose a place"
-        >
-          <button
-            class="place-button is-active"
-            type="button"
-            data-place="california"
-            style="--pin:#f28c55"
-            aria-pressed="true"
-            aria-controls="place-story"
-          >
-            <span class="swatch" aria-hidden="true"></span>
-            <span>
-              <strong>California</strong>
-              <small>Born</small>
-            </span>
-          </button>
-
-          <button
-            class="place-button"
-            type="button"
-            data-place="hong-kong"
-            style="--pin:#5d39d3"
-            aria-pressed="false"
-            aria-controls="place-story"
-          >
-            <span class="swatch" aria-hidden="true"></span>
-            <span>
-              <strong>Hong Kong</strong>
-              <small>Raised</small>
-            </span>
-          </button>
-
-          <button
-            class="place-button"
-            type="button"
-            data-place="bangkok"
-            style="--pin:#dce995"
-            aria-pressed="false"
-            aria-controls="place-story"
-          >
-            <span class="swatch" aria-hidden="true"></span>
-            <span>
-              <strong>Bangkok</strong>
-              <small>Family</small>
-            </span>
-          </button>
-
-          <button
-            class="place-button"
-            type="button"
-            data-place="new-york"
-            style="--pin:#fffcf6"
-            aria-pressed="false"
-            aria-controls="place-story"
-          >
-            <span class="swatch" aria-hidden="true"></span>
-            <span>
-              <strong>New York</strong>
-              <small>University</small>
-            </span>
-          </button>
-        </div>
-
-        <p
-          class="map-story"
-          id="place-story"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          I was born in San Diego, California.
-        </p>
-      </div>
-
-      <p class="map-credit">
-        Map data:
-        <a href="https://www.naturalearthdata.com/">
-          Natural Earth
-        </a>
-      </p>
-    </section>
-
-    <!-- About -->
-
-    <section
-      class="section wrap about-grid"
-      id="about"
-      aria-labelledby="about-title"
-    >
+    <section class="education" aria-labelledby="education-heading">
       <div>
-        <p class="eyebrow">A LITTLE MORE ABOUT ME</p>
-
-        <h2 id="about-title">
-          Numbers, institutions,<br>
-          and the past.
-        </h2>
+        <p class="eyebrow">Academic background</p>
+        <h2 id="education-heading">University of Rochester</h2>
       </div>
 
-      <div class="about-copy">
-        <p>
-          My background brings together
-          <strong>statistics, political science, and history</strong>.
-          I studied all three at the University of Rochester,
-          alongside mathematics and mathematical modeling.
-        </p>
+      <div>
+        <p class="degree-label">Graduated with three degrees</p>
 
-        <p>
-          I’m interested in data analysis, statistical modeling,
-          actuarial work, and political research—and how
-          quantitative methods can help us understand people
-          and institutions.
-        </p>
-
-        <div class="tools" aria-label="Technical skills">
-          <span>R</span>
-          <span>Python</span>
-          <span>SQL</span>
-          <span>Stata</span>
-          <span>MATLAB</span>
-        </div>
+        <ul class="degree-list" aria-label="Fields of study">
+          <li>Statistics</li>
+          <li>Political Science</li>
+          <li>History</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Contact form and LinkedIn -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div>
+        <p class="eyebrow">Beyond the portfolio</p>
+        <h2 id="social-heading">Let’s stay connected.</h2>
 
-    <section
-      class="contact wrap"
-      id="contact"
-      aria-labelledby="contact-title"
-    >
-      <div class="contact-copy">
-        <h2 id="contact-title">Let’s talk.</h2>
-
-        <p>
-          Have an opportunity, a question, or a project in mind?
-          Send me a message.
+        <p class="social-description">
+          Find me around the internet, or
+          <a href="contact.html">get in touch directly</a>.
         </p>
-
-        <a
-          class="social-link"
-          href="https://www.linkedin.com/in/malachihorsangchai/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View my LinkedIn profile (opens in a new tab)"
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M5.37 24H.4V7.98h4.97V24ZM2.88 5.8A2.88 2.88 0 1 1 2.9.04a2.88 2.88 0 0 1-.02 5.76ZM24 24h-4.97v-7.8c0-1.86-.04-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.12V24H8.48V7.98h4.77v2.18h.07c.66-1.26 2.29-2.59 4.71-2.59 5.04 0 5.97 3.32 5.97 7.63V24Z"/>
-          </svg>
-
-          View my LinkedIn profile
-        </a>
-
-        <svg
-          class="contact-star"
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-        >
-          <path
-            d="M50 0 64 35 100 50 64 65 50 100 35 65 0 50 35 35Z"
-            fill="currentColor"
-          />
-        </svg>
       </div>
 
-      <!--
-        After uploading, submit this form once and activate
-        it through the confirmation email from FormSubmit.
-      -->
-      <form
-        class="contact-form"
-        action="https://formsubmit.co/malachihorsangchai@gmail.com"
-        method="POST"
-      >
-        <input
-          type="hidden"
-          name="_subject"
-          value="New message from horsangchai.com"
-        >
-
-        <input
-          type="hidden"
-          name="_template"
-          value="table"
-        >
-
-        <input
-          type="hidden"
-          name="_url"
-          value="https://horsangchai.com/"
-        >
-
-        <input
-          class="honey"
-          type="text"
-          name="_honey"
-          tabindex="-1"
-          autocomplete="off"
-          aria-hidden="true"
-        >
-
-        <div class="field">
-          <label for="contact-name">Your name</label>
-
-          <input
-            id="contact-name"
-            name="name"
-            type="text"
-            autocomplete="name"
-            maxlength="100"
-            required
+      <ul class="social-links" aria-label="Social media profiles">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/malachihorsangchai/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-        </div>
+            LinkedIn
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
 
-        <div class="field">
-          <label for="contact-email">Your email</label>
-
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            maxlength="254"
-            required
+        <li>
+          <a
+            href="https://www.instagram.com/malachihorsangchai/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-        </div>
+            Instagram
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
 
-        <div class="field">
-          <label for="contact-message">Message</label>
+        <li>
+          <a
+            href="https://www.facebook.com/profile.php?id=61577680828188"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
 
-          <textarea
-            id="contact-message"
-            name="message"
-            rows="5"
-            maxlength="5000"
-            required
-          ></textarea>
-        </div>
+        <li>
+          <a
+            href="https://github.com/horsangchai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
 
-        <button class="button primary" type="submit">
-          Send message
-        </button>
-      </form>
+        <li>
+          <a
+            href="https://www.youtube.com/@MalachiHorsangchai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://x.com/mhorsangchai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            X
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.threads.com/@malachihorsangchai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Threads
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.tiktok.com/@mhorsangchai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TikTok
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer wrap">
-    <p>
-      © <span id="year">2026</span> Malachi Horsangchai
-    </p>
-
-    <a href="#top">Back to top</a>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; Malachi Horsangchai</p>
+      <a href="index.html">horsangchai.com</a>
+    </div>
   </footer>
-
-  <script>
-    const places = {
-      california: {
-        panX: 168,
-        text: 'I was born in San Diego, California.'
-      },
-
-      'hong-kong': {
-        panX: 858,
-        text: 'I was raised in Hong Kong.'
-      },
-
-      bangkok: {
-        panX: 701,
-        text: 'My family is from Bangkok, Thailand.'
-      },
-
-      'new-york': {
-        panX: 416,
-        text: 'I went to the University of Rochester in Rochester, New York.'
-      }
-    };
-
-    const mapWindow = document.getElementById('map-window');
-    const worldMap = document.getElementById('world-map');
-    const story = document.getElementById('place-story');
-    const controls = document.querySelectorAll('[data-place]');
-
-    const reducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    );
-
-    function selectPlace(key) {
-      const place = places[key];
-
-      if (!place) return;
-
-      controls.forEach(control => {
-        const active = control.dataset.place === key;
-
-        control.classList.toggle('is-active', active);
-        control.setAttribute('aria-pressed', String(active));
-      });
-
-      story.textContent = place.text;
-
-      // Keep the selected marker and its label visible together.
-      const target =
-        (place.panX / 1000) *
-        worldMap.getBoundingClientRect().width -
-        mapWindow.clientWidth / 2;
-
-      const limit = Math.max(
-        0,
-        mapWindow.scrollWidth - mapWindow.clientWidth
-      );
-
-      mapWindow.scrollTo({
-        left: Math.max(0, Math.min(target, limit)),
-        behavior: reducedMotion.matches ? 'auto' : 'smooth'
-      });
-    }
-
-    controls.forEach(control => {
-      control.addEventListener('click', () => {
-        selectPlace(control.dataset.place);
-      });
-
-      // Keyboard support for the SVG map labels.
-      if (control.tagName.toLowerCase() === 'g') {
-        control.addEventListener('keydown', event => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            selectPlace(control.dataset.place);
-          }
-        });
-      }
-    });
-
-    document.getElementById('year').textContent =
-      new Date().getFullYear();
-  </script>
 </body>
 </html>
